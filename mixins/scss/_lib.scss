@@ -1,0 +1,11 @@
+@mixin rounded ($border-color:coral, $shadow-color:PapayaWhip, $border-width:3px) {
+    border-radius: 50%;
+    border: $border-width solid $border-color;
+    box-shadow: 10px 5px 5px $shadow-color;
+}
+
+@mixin rounded-corner-box ($border-radius, $border-color, $border-width, $bkgr-color) {
+    border-radius: $border-radius;
+    border: $border-width solid $border-color;
+    background-color: $bkgr-color;
+}
