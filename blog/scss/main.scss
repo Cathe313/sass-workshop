@@ -1,1 +1,125 @@
 // write your code here
+
+$main-colour: hsl(240, 80%, 20%);
+$title-colour: hsl(240, 50%, 92%);
+$default-font: Helvetica;
+
+@mixin image ($border-radius, $width) {
+    display: inline-block;
+    border: 2px solid $main-colour;
+    box-shadow: 2px 2px $title-colour;
+    border-radius: $border-radius;
+    width: $width;
+}
+
+body {
+    margin: 0px 10px 0px 10px;
+    background-color: $title-colour;
+}
+
+a {
+    text-decoration: none;
+    color: $main-colour;
+}
+
+.main-header {
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    background-color: $main-colour;
+    display: block;
+    font-family: $default-font;
+    color: $title-colour;
+    
+    @media only screen and (min-width: 40.063em) {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__title {
+        font-size: 40px;
+        font-weight: bold;
+        @media only screen and (min-width: 40.063em) {
+            margin-left: 2em;
+        }
+    }
+    
+    &__tagline {
+        font-size: 20px;
+        font-style: italic;
+        @media only screen and (min-width: 40.063em) {
+            margin: 1em 2em 0px 20px;;
+        }
+    }
+}
+
+.article {
+    font-family: $default-font;
+    
+    &--sponsored {
+        margin: 2em;
+        &::before {
+            content: "SPONSORED!";
+            background-color: hsl(360, 80%, 20%);
+            color: hsl(360, 50%, 92%);
+            font-size: 30px;
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+    }
+    
+    &__title {
+        color: $main-colour;
+        font-size: 30px;
+        text-align: left;
+        margin: 0 1em 1em 1em;
+        display: inline-block;
+    }
+    
+    &__featured-image {
+        @include image(1%, 55%);
+        margin: 0px 10px 10px 0px;
+        float: left;
+    }
+    
+    &__paragraph {
+        text-align: justify;
+        font-size: 15px;
+        margin: 1em 0;
+        line-height: 1.5;        
+        
+        &--first {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.2em;
+            line-height: 1;
+            margin-top: 0;
+        }
+    }
+}
+
+.author-info {
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    
+    @media only screen and (min-width: 40.063em) {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+    
+    &__image {
+        @include image(50%, 30vh);
+        @media only screen and (min-width: 40.063em) {
+            float: left;
+        }
+    }
+    
+    &__text {
+        text-align: justify;
+        font-weight: bold;
+        margin: 10px;
+        font-style: italic;
+    }
+}
