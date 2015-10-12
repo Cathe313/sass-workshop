@@ -1,1 +1,55 @@
-// write your code here 
+body {
+    background-color: olive;
+    
+}
+
+.HolyGrail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.HolyGrail-header {
+    flex: 1 0 98%;
+}
+
+.HolyGrail-body {
+    display: inline-flex;
+}
+
+.HolyGrail-nav {
+    flex: 1 0 75px;
+    padding: 25px;
+    order: -1;
+
+}
+
+.HolyGrail-content {
+    flex: 3 0 250px;
+    text-align: justify;
+    
+    h1 {
+        margin: 0px;
+    }
+}
+
+.HolyGrail-ads {
+    flex: 1 0 75px;
+    padding: 25px;
+}
+
+.HolyGrail-footer {
+    flex: 1 0 98%;
+    padding: 25px;
+}
+
+nav strong {
+    padding: 25px;
+}
+
+aside strong {
+    padding: 25px;
+}
